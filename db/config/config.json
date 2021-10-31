@@ -1,10 +1,11 @@
 {
   "development": {
     "username": "postgres",
-    "password": "CODE2021",
+    "password": "ahmad1997",
     "database": "restaurant_db",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging":false
   },
   "test": {
     "username": "root",

@@ -6,11 +6,11 @@ const { fromAuthHeaderAsBearerToken } = require("passport-jwt").ExtractJwt;
 const { User } = require("../db/models");
 const { JWT_SECRET } = require("../config/keys");
 
-exports.localStrategy = new LocalStrategy(async (email, password, done) => {
+exports.localStrategy = new LocalStrategy(async (username, password, done) => {
   try {
     const user = await User.findOne({
         // make sure
-      where: { email: email },
+      where: { username: username },
     });
 
     const passwordsMatch = user

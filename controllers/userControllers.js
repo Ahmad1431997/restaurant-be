@@ -23,7 +23,7 @@ exports.signin = async (req, res, next) => {
 const generateToken = (user) => {
   const payload = {
     id: user.id,
-    email: user.email,
+    username: user.username,
     exp: Date.now() + JWT_EXPIRATION_MS,
   };
 
