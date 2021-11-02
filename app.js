@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
 const db = require("./db/models");
-
 const passport = require("passport");
 const cors = require("cors");
 const { localStrategy, jwtStrategy } = require("./middleware/passport");
-
 const userRoutes = require("./routes/userRoutes");
+const gallaryRoutes = require("./routes/gallaryRoutes")
+
+const path = require("path")
+
 
 //middleware
 app.use(cors());
@@ -22,7 +24,8 @@ passport.use(jwtStrategy);
 
 //routes
 app.use(userRoutes);
-
+app.use(gallaryRoutes)
+app.use("/media", express.static(path.join(__dirname, "media")));
 
 
 //error middleware
