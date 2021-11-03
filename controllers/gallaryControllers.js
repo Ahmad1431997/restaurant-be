@@ -14,3 +14,24 @@ exports.addImage = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.imagesList=async (req,res,next)=>{
+    try {
+      const images= await Gallary.findAll()
+      res.json(images)
+    } catch (error) {
+      next(error)
+    }
+}
+
+exports.deleteImage=async(req,res,next)=>{
+  try {
+    
+    const foundImage = await Gallary.findByPk(+req.params.imageId)
+    
+    await foundImage.destroy()
+    res.status(204).end()
+  } catch (error) {
+    next(error)
+  }
+}
