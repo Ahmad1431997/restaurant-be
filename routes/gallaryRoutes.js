@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require("passport");
-const { addImage } = require("../controllers/gallaryControllers");
+const { addImage, imagesList, deleteImage } = require("../controllers/gallaryControllers");
 const upload = require("../media/middleware/multer");
 const router = express.Router();
 //controllers
@@ -11,4 +11,7 @@ router.post(
  upload.single("image"), addImage
 );
 
+router.get("/images",imagesList)
+
+router.delete("/images/:imageId",deleteImage)
 module.exports = router;
