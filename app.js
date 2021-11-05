@@ -6,8 +6,11 @@ const cors = require("cors");
 const { localStrategy, jwtStrategy } = require("./middleware/passport");
 const userRoutes = require("./routes/userRoutes");
 const gallaryRoutes = require("./routes/gallaryRoutes")
+const categoryRoutes = require("./routes/categoryRoutes")
+const dishRoutes = require("./routes/dishRoutes")
+const path = require("path");
 
-const path = require("path")
+
 
 
 //middleware
@@ -25,6 +28,9 @@ passport.use(jwtStrategy);
 //routes
 app.use(userRoutes);
 app.use(gallaryRoutes)
+app.use(categoryRoutes)
+app.use(dishRoutes)
+
 app.use("/media", express.static(path.join(__dirname, "media")));
 
 
