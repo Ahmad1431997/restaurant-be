@@ -35,3 +35,6 @@ exports.deleteImage=async(req,res,next)=>{
     next(error)
   }
 }
+
+
+

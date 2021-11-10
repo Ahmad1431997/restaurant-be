@@ -17,7 +17,7 @@ exports.categoriesList = async (req, res, next) => {
 
       include: [{
           model: Dish,
-          attributes: ["id"],
+          attributes: ["id","name","image","price"],
           as:"dishes"
        } ]
 
