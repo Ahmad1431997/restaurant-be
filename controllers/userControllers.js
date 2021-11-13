@@ -25,7 +25,9 @@ const generateToken = (user) => {
     id: user.id,
     username: user.username,
     exp: Date.now() + JWT_EXPIRATION_MS,
-    isAdmin:user.isAdmin
+    isAdmin:user.isAdmin,
+    email:user.email,
+    phone:user.phone,
   };
 
   const token = jwt.sign(payload, JWT_SECRET);

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
     },
     price: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     image: {
